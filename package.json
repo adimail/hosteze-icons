@@ -2,10 +2,13 @@
   "name": "hosteze-icons",
   "version": "0.0.1",
   "description": "Icons for hosteze.in",
-  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/adimail/hosteze-icons.git"
