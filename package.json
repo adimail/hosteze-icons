@@ -1,32 +1,21 @@
 {
   "name": "hosteze-icons",
-  "version": "0.0.1",
-  "description": "Icons for hosteze.in",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "prepublishOnly": "npm run build"
-  },
+  "version": "0.0.2",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adimail/hosteze-icons.git"
-  },
-  "keywords": [
-    "icons"
+  "module": "dist/index.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "src"
   ],
-  "author": "Aditya Godse",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adimail/hosteze-icons/issues"
+  "scripts": {
+    "build": "tsc"
   },
-  "homepage": "https://github.com/adimail/hosteze-icons#readme",
-  "dependencies": {
+  "devDependencies": {
     "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "typescript": "^5.5.3"
+    "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
   }
 }
