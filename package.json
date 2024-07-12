@@ -1,0 +1,29 @@
+{
+  "name": "hosteze-icons",
+  "version": "0.0.1",
+  "description": "Icons for hosteze.in",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adimail/hosteze-icons.git"
+  },
+  "keywords": [
+    "icons"
+  ],
+  "author": "Aditya Godse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adimail/hosteze-icons/issues"
+  },
+  "homepage": "https://github.com/adimail/hosteze-icons#readme",
+  "dependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.3"
+  }
+}
