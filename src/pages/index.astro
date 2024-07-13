@@ -1,0 +1,103 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
+import { SITE, HOME, SOCIALS } from '@consts';
+import ArrowCard from '@components/ArrowCard.astro';
+import Link from '@components/Link.astro';
+import { getCollection } from 'astro:content';
+// import { Logo } from 'hosteze-icons';
+
+const docs = (await getCollection('docs'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
+---
+
+<Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+  <Container>
+    <div class='space-y-16'>
+      <section>
+        <article class='space-y-4'>
+          <span class='animate'>
+            <p>
+              Hosteze icons is an internal tool made by <a
+                href='https://adimail.github.io/'>Aditya Godse</a
+              > for distributing SVG icons used in their <Link
+                href='https://hosteze.in/'>web</Link
+              > and mobile applications. It is an Open-source library under GPL-3.0
+              license. Press <code>Ctrl+K</code> or <code>/</code> to search Icons.
+            </p>
+          </span>
+          <span class='animate'>
+            <p>
+              Visit hosteze-icons on
+              <Link href='https://github.com/adimail/hosteze-icons'>
+                GitHub
+              </Link>
+              and
+              <Link href='https://www.npmjs.com/package/hosteze-icons'>
+                npm
+              </Link>
+              to learn more about the codebase.
+            </p>
+          </span>
+        </article>
+      </section>
+
+      <ul class='not-prose flex flex-col gap-4'>
+        {
+          docs.map((post) => (
+            <li>
+              <ArrowCard entry={post} />
+            </li>
+          ))
+        }
+      </ul>
+
+      <section class='animate space-y-6'>
+        <div class='flex flex-wrap items-center justify-between gap-y-2'>
+          <h2 class='text-xl font-semibold text-black dark:text-white'>
+            Icons
+          </h2>
+        </div>
+        <!-- <ul class='not-prose flex flex-col gap-4'><Logo /></ul> -->
+      </section>
+
+      <section class='animate space-y-4'>
+        <h2 class='text-xl font-semibold text-black dark:text-white'>
+          Contact developer
+        </h2>
+        <article>
+          <p>
+            If you want to get in touch with me about something or internships
+            at hosteze, reach out on social media or send me an email.
+          </p>
+        </article>
+        <ul class='not-prose flex flex-wrap gap-2'>
+          {
+            SOCIALS.map((SOCIAL) => (
+              <li class='flex gap-x-2 text-nowrap'>
+                <Link
+                  href={SOCIAL.HREF}
+                  external
+                  aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
+                >
+                  {SOCIAL.NAME}
+                </Link>
+                {'/'}
+              </li>
+            ))
+          }
+          <li class='line-clamp-1'>
+            <Link
+              href={`mailto:${SITE.EMAIL}`}
+              aria-label={`Email ${SITE.TITLE}`}
+            >
+              {SITE.EMAIL}
+            </Link>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </Container>
+</Layout>

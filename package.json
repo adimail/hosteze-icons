@@ -1,34 +1,38 @@
 {
   "name": "hosteze-icons",
-  "version": "0.0.5",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "tsc"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adimail/hosteze-icons.git"
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/mdx": "^3.1.2",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/geist-mono": "^5.0.3",
+    "@fontsource/geist-sans": "^5.0.3",
+    "astro": "^4.11.3",
+    "astro-pagefind": "^1.5.0",
+    "clsx": "^2.1.1",
+    "hosteze-icons": "^0.0.5",
+    "sharp": "^0.33.4",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   },
-  "keywords": [
-    "icons"
-  ],
-  "author": "Aditya Godse",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adimail/hosteze-icons/issues"
-  },
-  "homepage": "https://github.com/adimail/hosteze-icons#readme",
   "devDependencies": {
-    "@types/react": "^18.3.3",
-    "typescript": "^4.3.5"
-  },
-  "peerDependencies": {
-    "react": "^17.0.2"
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/mdx": "^2.0.13",
+    "pagefind": "^1.1.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-tailwindcss": "^0.5.14"
   }
 }
